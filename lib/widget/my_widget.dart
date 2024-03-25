@@ -6,6 +6,7 @@ const Color warnaUtama = Color(0xFF21205E);
 const Color warnaKedua = Color(0xFFFBC21A);
 const Color warnaPutih = Color(0xFFFFFFFF);
 const Color warnaHitam = Color(0xFF000000);
+const Color warnaError = Color(0xFFFF0000);
 
 class MyTextBesar extends StatelessWidget {
   final String text;
@@ -22,7 +23,7 @@ class MyTextBesar extends StatelessWidget {
     return Text(
       text,
       style: TextStyle(
-        fontSize: 38,
+        fontSize: 32,
         fontWeight: FontWeight.w700,
         color: color,
       ),
@@ -45,7 +46,7 @@ class MyTextSedang extends StatelessWidget {
     return Text(
       text,
       style: TextStyle(
-        fontSize: 24,
+        fontSize: 20,
         fontWeight: FontWeight.w500,
         color: color,
       ),

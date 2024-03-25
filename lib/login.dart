@@ -76,22 +76,44 @@ class _MyLoginState extends State<MyLogin> {
                                   ));
                             } else {
                               // Login Gagal
-                              return showDialog<void>(
-                                context: context,
-                                builder: (BuildContext context) => AlertDialog(
-                                  title: const MyTextBesar(text: 'Informasi'),
-                                  content: const MyTextKecil(
-                                      text: 'Email dan Password Salah!'),
-                                  actions: <TextButton>[
-                                    TextButton(
-                                      onPressed: () {
-                                        Navigator.pop(context);
-                                      },
-                                      child: const Text('Close'),
-                                    )
-                                  ],
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                  backgroundColor: warnaError,
+                                  content: Row(
+                                    children: const [
+                                      Icon(
+                                        Icons.dangerous_outlined,
+                                        size: 24,
+                                        color: warnaPutih,
+                                      ),
+                                      SizedBox(
+                                        width: 4,
+                                      ),
+                                      MyTextSedang(
+                                        text: 'Email dan Password Salah.',
+                                        color: warnaPutih,
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               );
+
+                              // return showDialog<void>(
+                              //   context: context,
+                              //   builder: (BuildContext context) => AlertDialog(
+                              //     title: const MyTextBesar(text: 'Informasi'),
+                              //     content: const MyTextKecil(
+                              //         text: 'Email dan Password Salah!'),
+                              //     actions: <TextButton>[
+                              //       TextButton(
+                              //         onPressed: () {
+                              //           Navigator.pop(context);
+                              //         },
+                              //         child: const Text('Close'),
+                              //       )
+                              //     ],
+                              //   ),
+                              // );
                             }
                           }
                         },
